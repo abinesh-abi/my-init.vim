@@ -24,8 +24,9 @@ Plug 'mxw/vim-jsx'
 
 
 "bottom status bar
-Plug 'itchyny/lightline.vim'
-"Plug 'vim-airline/vim-airline'
+" Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 "suggection pressing tab
 "Plug 'ervandew/supertab'
@@ -79,8 +80,8 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'preservim/tagbar'
 
 "fzf file finder
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'kien/ctrlp.vim'
 
 
@@ -90,9 +91,8 @@ Plug 'kien/ctrlp.vim'
  "for starting screen
  Plug 'mhinz/vim-startify'
 
- Plug 'jeetsukumaran/vim-buffergator' "leader b show buffer/tabs
-
-
+ "managi tabs/buffer
+Plug 'jeetsuku/vim-buffergator' "leader b show buffer/tabs
 
 
 call plug#end()
@@ -101,6 +101,38 @@ call plug#end()
 
 
 "settings for plugins-----------------
+
+"NERDTree settings
+" open NERDTree automatically when vim starts up on opening a directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+
+"airline settings
+"enable tab 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+"airline theam
+let g:airline_theme='simple'
+
+" setup for ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+
+
+
 
 
 "coc.nvim prettier settings

@@ -33,7 +33,7 @@ nmap <leader>q :q<CR>
 nmap <leader><leader>p :Prettier<cr>
 nmap <leader><leader>t :NERDTreeToggle<cr>
 nmap <F8> :TagbarToggle<CR>
-nnoremap <silent> <C-f> :Files<CR> "for  fzf
+" nnoremap <silent> <C-f> :Files<CR> "for  fzf
 
 
 
