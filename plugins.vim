@@ -14,6 +14,10 @@ Plug 'vim-syntastic/syntastic' "alternative to ultisnips
 
 "filemanager
 Plug 'preservim/NERDTree'
+Plug 'PhilRunninger/nerdtree-visual-selection' "plugis for nerdtree 
+Plug 'Xuyuanp/nerdtree-git-plugin' "plugin nerdtree git
+
+
 
 "html snypets
 Plug 'mattn/emmet-vim'
@@ -74,7 +78,6 @@ Plug 'tpope/vim-fugitive'
 
 "terminal
 Plug 'akinsho/toggleterm.nvim'
-" Plug 'voldikss/vim-floaterm'
 
 "tagbat for code navigation
 Plug 'preservim/tagbar'
