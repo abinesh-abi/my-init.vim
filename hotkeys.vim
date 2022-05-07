@@ -2,14 +2,18 @@
 "  jj jk	-	esc
 " ctrl t	-	terminal
 " leader b - shows buffer/tabs list
-" leader t -    NERDTreeToggle
+" comand :bp , :bn  - swith between tabs previous and next
+" leader e -    NERDTreeToggle
+" ctrl mhjkl - move cursor between split windows
+" alt  mhjkl - align spit windows 
+"
 "
 "
 "
 "
 "
 "" hotkey config"
-" press jj for esc insert mode
+" press jj <fo></fo>r esc insert mode
 imap jj <Esc>
 imap jk <Esc>
 
@@ -31,7 +35,7 @@ nmap <leader>q :q<CR>
 "map
 " nmap <leader>t :ToggleTerm<cr>
 nmap <leader><leader>p :Prettier<cr>
-nmap <leader><leader>t :NERDTreeToggle<cr>
+nmap <leader>e :NERDTreeToggle<cr>
 nmap <F8> :TagbarToggle<CR>
 " nnoremap <silent> <C-f> :Files<CR> "for  fzf
 

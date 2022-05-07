@@ -58,7 +58,9 @@ let g:coc_global_extensions = [
 	\'coc-emmet',
 	\'coc-html',
 	\'coc-json',
-	\'coc-prettier'
+	\'coc-prettier',
+  \'coc-lightbulb',
+  \'coc-symbol-line',
 	\]  
 
 
@@ -103,13 +105,14 @@ call plug#end()
 
 
 
-"settings for plugins-----------------
+"settings for pluginkljrs-----------------
 
 "NERDTree settings
 " open NERDTree automatically when vim starts up on opening a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-
+" nerdtree width
+let g:NERDTreeWinSize=20
 
 "airline settings
 "enable tab 
@@ -117,7 +120,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
-"airline theam
+"airline theme
 let g:airline_theme='simple'
 
 " setup for ctrlp
@@ -137,7 +140,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 
 
-
+""""coc settings""""
 "coc.nvim prettier settings
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 
@@ -151,14 +154,11 @@ endif
 syntax enable
 
 set t_Co=256
-colorscheme atom-dark-256 "m"olokai gruvbox
+colorscheme molokai "atom-dark-256 "m"olokai gruvbox
 
 
 
 
-"toggle terminal size
-let g:floaterm_width = 75
-let g:floaterm_winblend = 0
 
 """"""copy past from coc.nvim""""""
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
