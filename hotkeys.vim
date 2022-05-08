@@ -18,7 +18,6 @@ imap jj <Esc>
 imap jk <Esc>
 
 nmap J 6j
-nmap K 6k
 
 imap <C-s> <Esc>:w<CR>
 nmap <C-s> :w<CR>

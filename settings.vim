@@ -3,6 +3,12 @@ set nocompatible
 " enable mouse
 set mouse=a
 
+"evable scrol up and down
+   :nnoremap <ScrollWheelUp> <C-Y>
+   :nnoremap <S-ScrollWheelUp> <C-U>
+   :nnoremap <ScrollWheelDown> <C-E>
+   :nnoremap <S-ScrollWheelDown> <C-D>
+
 " default options
 set completeopt=menu,menuone,noselect " better autocomplete options
 set mouse=a " if I accidentally use the mouse
@@ -58,7 +64,7 @@ set clipboard=unnamedplus "copy past system keboard
 :set notimeout
 
 
-"open file where was your cursor 
+"open file with cursor position where we closed before 
 au BufWinLeave ?* mkview
 au BufWinEnter ?* silent loadview
 

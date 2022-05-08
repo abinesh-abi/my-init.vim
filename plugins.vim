@@ -87,8 +87,11 @@ Plug 'preservim/tagbar'
 "fzf file finder
 " Plug 'junegunn/fzf.vim'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"
 Plug 'kien/ctrlp.vim'
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim' "dependency for telescope
 
 "for devicons font 
  Plug 'ryanoasis/vim-devicons'
@@ -97,15 +100,31 @@ Plug 'kien/ctrlp.vim'
  Plug 'mhinz/vim-startify'
 
  "managi tabs/buffer
-Plug 'jeetsuku/vim-buffergator' "leader b show buffer/tabs
+" Plug 'jeetsuku/vim-buffergator' "leader b show buffer/tabs
 
+Plug 'christoomey/vim-system-copy' "copy past system keyboard
+
+"indicate keymap
+Plug 'liuchengxu/vim-which-key' "not working
+
+"repeat comand "." to rememeber plugins, vim-surround etc
+Plug 'tpope/vim-repeat'
 
 call plug#end()
 
 
 
 
-"settings for pluginkljrs-----------------
+"settings for plugin-----------------
+
+"for telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+"which setting
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR> "not wor for me
 
 "NERDTree settings
 " open NERDTree automatically when vim starts up on opening a directory
@@ -145,7 +164,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 
 "auto_save plugin
-let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save= 1  " enable AutoSave on Vim startup
 
  " color schemes
 if (has("termguicolors"))
@@ -154,7 +173,7 @@ endif
 syntax enable
 
 set t_Co=256
-colorscheme molokai "atom-dark-256 "m"olokai gruvbox
+colorscheme molokai "atom-dark-256 "molokai gruvbox
 
 
 
