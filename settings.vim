@@ -11,13 +11,13 @@ set mouse=a
 
 " default options
 set completeopt=menu,menuone,noselect " better autocomplete options
-set mouse=a " if I accidentally use the mouse
 set splitright " splits to the right
 set splitbelow " splits below
 set expandtab " space characters instead of tab
 set tabstop=2 " tab equals 2 spaces
 set shiftwidth=2 " indentation
 set number " show absolute line numbers
+set number relativenumber
 set ignorecase " search case insensitive
 set smartcase " search via smartcase
 set incsearch " search incremental
@@ -31,30 +31,12 @@ set signcolumn=yes " add a column for sings (e.g. LSP, ...)
 set updatetime=520 " time until update
 set undofile " persists undo tree
 filetype plugin indent on " enable detection, plugins and indents
+syntax on "enable syntax
 set nowrap 
 
-
-
-
-" Enable type file detection. Vim will be able to try to detect the type of file in use.
-filetype on
-
-" Enable plugins and load plugin for the detected file type.
-filetype plugin on
-
-" Load an indent file for the detected file type.
-filetype indent on
-
-" Turn syntax highlighting on.
-syntax on
-
-" Add numbers to each line on the left-hand side.
-" set number
-set number relativenumber
-
 " Highlight cursor line underneath the cursor horizontally.
-" set cursorline
-" set cursorcolumn
+set cursorline
+set cursorcolumn
 " set cursorcolumn=80 " Highlight cursor line underneath the cursor vertically.
 
 set clipboard=unnamedplus "copy past system keboard
@@ -73,9 +55,6 @@ nnoremap <leader>; ;
 map ; :
 
 
-" open new split panes to right and below
-set splitright
-set splitbelow
 
 
 

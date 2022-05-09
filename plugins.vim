@@ -42,9 +42,14 @@ Plug 'jiangmiao/auto-pairs'
 Plug '907th/vim-auto-save'
 
 "for  theame
-Plug 'morhetz/gruvbox'
-Plug 'tomasr/molokai'
-Plug 'gosukiwi/vim-atom-dark'
+" Plug 'morhetz/gruvbox'
+" Plug 'tomasr/molokai'
+" Plug 'gosukiwi/vim-atom-dark'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+
+
 
 "auto completion
 " Plug 'jayli/vim-easycomplete'
@@ -98,6 +103,7 @@ Plug 'nvim-telescope/telescope.nvim' "dependency for telescope
 
  "for starting screen
  Plug 'mhinz/vim-startify'
+ " Plug 'glepnir/dashboard-nvim'
 
  "managi tabs/buffer
 " Plug 'jeetsuku/vim-buffergator' "leader b show buffer/tabs
@@ -109,6 +115,9 @@ Plug 'liuchengxu/vim-which-key' "not working
 
 "repeat comand "." to rememeber plugins, vim-surround etc
 Plug 'tpope/vim-repeat'
+
+"view undo lists
+Plug 'mbbill/undotree'
 
 call plug#end()
 
@@ -157,8 +166,6 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 
 
-
-
 """"coc settings""""
 "coc.nvim prettier settings
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
@@ -173,9 +180,15 @@ endif
 syntax enable
 
 set t_Co=256
-colorscheme molokai "atom-dark-256 "molokai gruvbox
+colorscheme onehalflight "molokai "atom-dark-256 "molokai gruvbox
 
-
+"gitgutter settings
+" Use fontawesome icons as signs
+let g:gitgutter_sign_added = '|'
+let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = '<'
 
 
 
