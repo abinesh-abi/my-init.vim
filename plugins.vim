@@ -7,7 +7,6 @@ call plug#begin()
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets' "ultisnips neeeds this plugis
 
-Plug 'vim-syntastic/syntastic' "alternative to ultisnips
 
 
 
@@ -85,6 +84,7 @@ Plug 'tpope/vim-fugitive'
 
 "terminal
 Plug 'akinsho/toggleterm.nvim'
+Plug 'voldikss/vim-floaterm'
 
 "tagbat for code navigation
 Plug 'preservim/tagbar'
@@ -119,6 +119,10 @@ Plug 'tpope/vim-repeat'
 "view undo lists
 Plug 'mbbill/undotree'
 
+"indicate tabs in lines
+Plug 'Yggdroot/indentLine'
+
+
 call plug#end()
 
 
@@ -126,14 +130,8 @@ call plug#end()
 
 "settings for plugin-----------------
 
-"for telescope
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-"which setting
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR> "not wor for me
+
 
 "NERDTree settings
 " open NERDTree automatically when vim starts up on opening a directory
@@ -147,6 +145,11 @@ let g:NERDTreeWinSize=20
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+"airline settings from  :h coc-status
+let airline#extensions#coc#error_symbol = 'Error:'
+let airline#extensions#coc#warning_symbol = 'Warning:'
+let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
+let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
 
 "airline theme
 let g:airline_theme='simple'
@@ -165,6 +168,9 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 
+"settings fot indentLine
+let g:indentLine_bgcolor_term = 555
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 """"coc settings""""
 "coc.nvim prettier settings
@@ -205,7 +211,7 @@ set nobackup
 set nowritebackup
 
 " Give more space for displaying messages.
-set cmdheight=2
+" set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.

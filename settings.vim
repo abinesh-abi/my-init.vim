@@ -28,10 +28,11 @@ set nowritebackup " don't create backup files
 set cmdheight=1 " only one line for commands
 set shortmess+=c " don't need to press enter so often
 set signcolumn=yes " add a column for sings (e.g. LSP, ...)
-set updatetime=520 " time until update
+set updatetime=300 " time until update
 set undofile " persists undo tree
 filetype plugin indent on " enable detection, plugins and indents
 syntax on "enable syntax
+set background=dark
 set nowrap 
 
 " Highlight cursor line underneath the cursor horizontally.

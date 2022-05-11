@@ -1,6 +1,7 @@
 """""""""""""""""key maps"""""""""""""""""
 "  jj jk	-	esc
-" ctrl t	-	terminal
+" ctrl t	-	ttoggle erminal
+" leader tt - floattrem
 " leader b - shows buffer/tabs list
 " comand :bp , :bn  - swith between tabs previous and next
 " leader e -    NERDTreeToggle
@@ -17,6 +18,7 @@
 "" hotkey config"
 " press jj <fo></fo>r esc insert mode
 imap jj <Esc>
+
 imap jk <Esc>
 
 nmap J 6j
@@ -32,36 +34,6 @@ let mapleader = ","
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
 
-
-"map
-" nmap <leader>t :ToggleTerm<cr>
-nmap <leader><leader>p :Prettier<cr>
-nmap <leader>e :NERDTreeToggle<cr>
-nmap <F8> :TagbarToggle<CR>
-" nnoremap <silent> <C-f> :Files<CR> "for  fzf
-nnoremap <F5> :UndotreeToggle<CR> "for undo tree
-
-
-""toggle terminal
-"noremap  <leader>t  :FloatermToggle<CR>i
-"noremap! <leader>t  <Esc>:FloatermToggle<CR>i
-"tnoremap <leader>t  <C-\><C-n>:FloatermToggle<CR>
-
-
-nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
-inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
-
-
-" " move line or visually selected block - alt+j/k
-" inoremap <A-j> <Esc>:m .+1<CR>==gi
-" inoremap <A-k> <Esc>:m .-2<CR>==gi
-" vnoremap <A-j> :m '>+1<CR>gv=gv
-" vnoremap <A-k> :m '<-2<CR>gv=gv
-" " move split panes to left/bottom/top/right
-"  nnoremap <A-h> <C-W>H
-"  nnoremap <A-j> <C-W>J
-"  nnoremap <A-k> <C-W>K
-"  nnoremap <A-l> <C-W>L
 " move between panes to left/bottom/top/right
  nnoremap <C-h> <C-w>h
  nnoremap <C-j> <C-w>j
@@ -73,3 +45,55 @@ inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
  nnoremap <A-l> <C-W>>
  nnoremap <A-j> <C-W>+
  nnoremap <A-k> <C-W>-
+
+" " move line or visually selected block - alt+j/k
+" inoremap <A-j> <Esc>:m .+1<CR>==gi
+" inoremap <A-k> <Esc>:m .-2<CR>==gi
+" vnoremap <A-j> :m '>+1<CR>gv=gv
+" vnoremap <A-k> :m '<-2<CR>gv=gv
+" " move split panes to left/bottom/top/right
+"  nnoremap <A-h> <C-W>H
+"  nnoremap <A-j> <C-W>J
+"  nnoremap <A-k> <C-W>K
+"  nnoremap <A-l> <C-W>L
+"
+"
+"
+"map for plugins
+" nmap <leader>t :ToggleTerm<cr>
+nmap <leader><leader>p :Prettier<cr>
+nmap <leader>e :NERDTreeToggle<cr>
+nmap <F8> :TagbarToggle<CR>
+" nnoremap <silent> <C-f> :Files<CR> "for  fzf
+nnoremap <F5> :UndotreeToggle<CR> "for undo tree
+
+
+""toggle terminal
+nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
+
+
+"floaterm settings
+"little bit tricky on andoid phone
+nnoremap   <silent>   <Leader>tt    :FloatermNew --height=1.2 --width=0.8<CR>
+tnoremap   <silent>   <Leader>tt   <C-\><C-n>:FloatermNew<CR>
+nnoremap   <silent>   <Leader>tp   :FloatermPrev<CR>
+tnoremap   <silent>   <Leader>tp   <C-\><C-n>:FloatermPrev<CR>
+nnoremap   <silent>   <Leader>tn   :FloatermNext<CR>
+tnoremap   <silent>   <Leader>tn   <C-\><C-n>:FloatermNext<CR>
+nnoremap   <silent>   <Leader>tf   :FloatermToggle --height=1.2 --width=0.8<CR>
+tnoremap   <silent>   <Leader>tf   <C-\><C-n>:FloatermToggle<CR>
+"noremap  <leader>t  :FloatermToggle<CR>i
+"noremap! <leader>t  <Esc>:FloatermToggle<CR>i
+"tnoremap <leader>t  <C-\><C-n>:FloatermToggle<CR>
+
+
+"for telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+"WhichKey setting
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR> "not wor for me
+
