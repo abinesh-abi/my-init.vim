@@ -110,8 +110,6 @@ Plug 'nvim-telescope/telescope.nvim' "dependency for telescope
 
 Plug 'christoomey/vim-system-copy' "copy past system keyboard
 
-"indicate keymap
-Plug 'liuchengxu/vim-which-key' "not working
 
 "repeat comand "." to rememeber plugins, vim-surround etc
 Plug 'tpope/vim-repeat'

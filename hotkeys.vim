@@ -16,9 +16,8 @@
 "
 "
 "" hotkey config"
-" press jj <fo></fo>r esc insert mode
+" press jj for esc insert mode
 imap jj <Esc>
-
 imap jk <Esc>
 
 nmap J 6j
@@ -94,6 +93,4 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-"WhichKey setting
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR> "not wor for me
 
