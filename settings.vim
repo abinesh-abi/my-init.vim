@@ -31,6 +31,8 @@ set signcolumn=yes " add a column for sings (e.g. LSP, ...)
 set updatetime=300 " time until update
 set undofile " persists undo tree
 filetype plugin indent on " enable detection, plugins and indents
+set noswapfile   "do not make swap file
+set termguicolors
 syntax on "enable syntax
 set background=dark
 set nowrap 

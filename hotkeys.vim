@@ -2,7 +2,6 @@
 "  jj jk	-	esc
 " ctrl t	-	ttoggle erminal
 " leader tt - floattrem
-" leader b - shows buffer/tabs list
 " comand :bp , :bn  - swith between tabs previous and next
 " leader e -    NERDTreeToggle
 " ctrl mhjkl - move cursor between split windows
@@ -69,19 +68,20 @@ nnoremap <F5> :UndotreeToggle<CR> "for undo tree
 
 ""toggle terminal
 nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
-inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
+" inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
+tnoremap <silent><c-t> <C-\><C-n>:ToggleTerm<CR>
 
 
 "floaterm settings
 "little bit tricky on andoid phone
-nnoremap   <silent>   <Leader>tt    :FloatermNew --height=1.2 --width=0.8<CR>
-tnoremap   <silent>   <Leader>tt   <C-\><C-n>:FloatermNew<CR>
+nnoremap   <silent>   <Leader>ty    :FloatermNew --height=1.2 --width=0.8<CR>
+tnoremap   <silent>   <Leader>ty   <C-\><C-n>:FloatermNew<CR>
 nnoremap   <silent>   <Leader>tp   :FloatermPrev<CR>
 tnoremap   <silent>   <Leader>tp   <C-\><C-n>:FloatermPrev<CR>
 nnoremap   <silent>   <Leader>tn   :FloatermNext<CR>
 tnoremap   <silent>   <Leader>tn   <C-\><C-n>:FloatermNext<CR>
-nnoremap   <silent>   <Leader>tf   :FloatermToggle --height=1.2 --width=0.8<CR>
-tnoremap   <silent>   <Leader>tf   <C-\><C-n>:FloatermToggle<CR>
+nnoremap   <silent>   <Leader>tt   :FloatermToggle --height=1.2 --width=0.8<CR>
+tnoremap   <silent>   <Leader>tt   <C-\><C-n>:FloatermToggle<CR>
 "noremap  <leader>t  :FloatermToggle<CR>i
 "noremap! <leader>t  <Esc>:FloatermToggle<CR>i
 "tnoremap <leader>t  <C-\><C-n>:FloatermToggle<CR>

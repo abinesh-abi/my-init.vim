@@ -47,6 +47,8 @@ Plug '907th/vim-auto-save'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+Plug 'ayu-theme/ayu-vim'
+" Plug 'rakr/vim-one'
 
 
 
@@ -120,6 +122,10 @@ Plug 'mbbill/undotree'
 "indicate tabs in lines
 Plug 'Yggdroot/indentLine'
 
+"for multicursors
+Plug 'terryma/vim-multiple-cursors' "ctl n,p,x
+
+
 
 call plug#end()
 
@@ -184,7 +190,8 @@ endif
 syntax enable
 
 set t_Co=256
-colorscheme onehalflight "molokai "atom-dark-256 "molokai gruvbox
+colorscheme ayu "onehalflight molokai atom-dark-256 gruvbox
+let ayucolor="dark" "for ayu colorscheme
 
 "gitgutter settings
 " Use fontawesome icons as signs
@@ -220,12 +227,12 @@ set shortmess+=c
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
+" if has("nvim-0.5.0") || has("patch-8.1.1564")
+"   " Recently vim can merge signcolumn and number column into one
+"   set signcolumn=number
+" else
+"   set signcolumn=yes
+" endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
